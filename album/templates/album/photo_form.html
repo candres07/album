@@ -1,4 +1,17 @@
 {% extends "base.html" %}
+
+{% block section  %}
+
+<h2>
+	Crear foto
+	<br>
+	<br>
+
+</h2>
+
+{% endblock section  %}
+
+
 {% block maincontent %}
  <form enctype="multipart/form-data" method="post">
     {% csrf_token %}

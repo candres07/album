@@ -31,10 +31,23 @@ class PhotoDetailView(DetailView):
     '''def get_object(self):
         return get_object_or_404(Category, pk=request.session['user_id'])'''
 
+class CategoryUpdate(UpdateView):
+    model = Category
+    fields='__all__'
+
+class CategoryCreate(CreateView):
+    model = Category
+    fields = '__all__'
+
+class CategoryDelete(DeleteView):
+    model = Category
+    fields = '__all__'
+    success_url = reverse_lazy('category-list')
+
 class PhotoUpdate(UpdateView):
     model = Photo
     fields = '__all__'
-
+    
 class PhotoCreate(CreateView):
     model = Photo
     fields = '__all__'
